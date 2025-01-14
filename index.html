@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday, Ritika!</title>
+  <!-- Basic Reset -->
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fffaf7;
+      /* Ivory/Pastel background */
+      color: #4f2e2c;
+      /* Soft dark brown text for elegance */
+      line-height: 1.6;
+    }
+
+    a {
+      color: #b85c70;
+      /* Rose link color */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin: 0.5em 0;
+      font-weight: normal;
+    }
+
+    /* ---------- Global Containers ---------- */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      height: 100vh;
+      background: url('images/bg.png') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .hero .hero-content {
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero .cta-btn {
+      display: inline-block;
+      background-color: #f2d8d8;
+      /* Pastel rose/blush */
+      color: #4f2e2c;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero .cta-btn:hover {
+      background-color: #f2b3b3;
+    }
+
+    /* ---------- Timeline Section ---------- */
+    .timeline {
+      background-color: #fff;
+      padding: 3rem 0;
+    }
+
+    .timeline h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #b85c70;
+    }
+
+    .timeline-items {
+      display: flex;
+      overflow-x: auto;
+      gap: 2rem;
+      scroll-behavior: smooth;
+      padding: 1rem;
+    }
+
+    .timeline-item {
+      min-width: 300px;
+      background-color: #ffeef0;
+      /* Soft pastel pink */
+      border-radius: 8px;
+      padding: 1rem;
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .timeline-item img,
+    .timeline-item video {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+    }
+
+    /* ---------- Star Map Section ---------- */
+    .star-map {
+      background-color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .star-map h2 {
+      color: #b85c70;
+      margin-bottom: 1rem;
+    }
+
+    .star-map p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #4f2e2c;
+      font-size: 1.1rem;
+    }
+
+    .star-map-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .star-map-item {
+      background-color: #fffaf7;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .star-map-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .star-map-item img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .star-map-item h3 {
+      color: #b85c70;
+      margin-bottom: 0.5rem;
+    }
+
+    .star-map-item p {
+      font-size: 0.95rem;
+      color: #4f2e2c;
+    }
+
+
+    /* ---------- Spotify Playlist Section ---------- */
+    .playlist {
+      background-color: #fffaf7;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .playlist h2 {
+      color: #b85c70;
+      margin-bottom: 1rem;
+    }
+
+    .playlist p {
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+
+    .playlist iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 380px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    /* ---------- Love Letter Section (Typewriter) ---------- */
+    .love-letter {
+      background-color: #ffeef0;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .love-letter h2 {
+      color: #b85c70;
+      margin-bottom: 1rem;
+    }
+
+    .letter-content {
+      display: inline-block;
+      white-space: nowrap;
+      border-right: 2px solid rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      width: 0;
+      /* Will be animated */
+      animation: typing 6s steps(60, end) forwards;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      text-align: left;
+      color: #4f2e2c;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 35em;
+      }
+
+      /* Adjust to fit the letter's approximate width */
+    }
+
+    .read-more {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.8rem 1.2rem;
+      background-color: #f2d8d8;
+      border-radius: 4px;
+      color: #4f2e2c;
+      max-width: 150px;
+      text-align: center;
+    }
+
+    .read-more:hover {
+      background-color: #f2b3b3;
+    }
+
+    /* ---------- Photo Gallery Section ---------- */
+    .gallery {
+      background-color: #fff;
+      padding: 3rem 0;
+    }
+
+    .gallery h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #b85c70;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    .gallery-caption {
+      display: none;
+    }
+
+    .gallery-item {
+      position: relative;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 0 0 6px 6px;
+    }
+
+    /* ---------- Quiz Section ---------- */
+    .quiz {
+      background-color: #fffaf7;
+      padding: 3rem 0;
+    }
+
+    .quiz h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #b85c70;
+    }
+
+    .quiz form {
+      max-width: 600px;
+      margin: 2rem auto;
+      background-color: #fffaf7;
+      border-radius: 8px;
+      padding: 1rem 2rem;
+    }
+
+    .quiz .question {
+      margin-bottom: 1rem;
+    }
+
+    .quiz label {
+      margin-left: 0.4rem;
+    }
+
+    .quiz .submit-btn {
+      margin-top: 1rem;
+      background-color: #f2d8d8;
+      color: #4f2e2c;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quiz .submit-btn:hover {
+      background-color: #f2b3b3;
+    }
+
+    /* ---------- Countdown Section ---------- */
+    .countdown {
+      background-color: #fffaf7;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .countdown h2 {
+      color: #b85c70;
+      margin-bottom: 1rem;
+    }
+
+    .countdown .timer {
+      font-size: 2rem;
+      background-color: #ffeef0;
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+    }
+
+    /* ---------- Wishes from Loved Ones ---------- */
+    .wishes {
+      background-color: #ffeef0;
+      padding: 3rem 0;
+    }
+
+    .wishes h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #b85c70;
+    }
+
+    .wishes-container {
+      display: flex;
+      overflow-x: auto;
+      /* Horizontal scrolling for items */
+      overflow-y: hidden;
+      /* Prevent vertical scrolling */
+      gap: 1.5rem;
+      padding: 0 1rem;
+      height: 300px;
+      /* Fixed height for the container */
+    }
+
+    .wish-item {
+      flex-shrink: 0;
+      width: 400px;
+      /* Adjust width of each item */
+      text-align: center;
+    }
+
+
+    .wish-item img {
+      width: 100%;
+      /* Make the image responsive to the container's width */
+      height: 300px;
+      /* Increase the height as needed */
+      object-fit: contain;
+      /* Ensure the whole image is visible without cropping */
+      border-radius: 5px;
+      /* Optional: Add rounded corners */
+      background-color: #fff;
+      /* Optional: Add a background color for padding effect */
+    }
+
+
+    /* ---------- Footer ---------- */
+    footer {
+      background-color: #b85c70;
+      color: #fff;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    footer a {
+      color: #ffeef0;
+      text-decoration: underline;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      /* Semi-transparent background */
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close:hover {
+      color: #ff6b6b;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      /* Semi-transparent background */
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background-color: #fffaf7;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 600px;
+      max-height: 80%;
+      overflow-y: auto;
+      /* Allow scrolling if content is long */
+      position: relative;
+      text-align: left;
+    }
+
+    .letter-modal-content h2 {
+      color: #b85c70;
+      margin-bottom: 1rem;
+    }
+
+    .letter-modal-content p {
+      color: #4f2e2c;
+      line-height: 1.8;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.5rem;
+      color: #4f2e2c;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #ff6b6b;
+    }
+
+    /* Love Message Section */
+    .love-message {
+      background-color: #fffaf7;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .love-message h2 {
+      color: #b85c70;
+      margin-bottom: 1.5rem;
+    }
+
+    .message-box {
+      background-color: #ffeef0;
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #4f2e2c;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .message-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .hint {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #b85c70;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .question-container {
+  background-color: #ffeef0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.submit-btn {
+  margin-top: 1rem;
+  background-color: #f2d8d8;
+  color: #4f2e2c;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  background-color: #f2b3b3;
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Happy Birthday, Ritika!</h1>
+      <p>This site is a collection of memories, love, and surprises, made just for you.</p>
+      <a href="#timeline" class="cta-btn">Scroll to Begin Your Journey</a>
+    </div>
+  </section>
+
+  <!-- ========== TIMELINE SECTION ========== -->
+  <section id="timeline" class="timeline container">
+    <h2>Timeline of Our Memories</h2>
+    <div class="timeline-items">
+      <!-- Example memory item -->
+      <div class="timeline-item">
+        <img src="images/first_date.JPG" alt="Our First Date" />
+        <h3>Our First Date</h3>
+        <p>Remember that magical morning at India Gate? It still makes me smile.</p>
+      </div>
+      <div class="timeline-item">
+        <video src="images/trip.mp4" controls></video>
+        <h3>The Trip to Planeterium</h3>
+        <p>One of our best adventures—let's go again soon!</p>
+      </div>
+      <div class="timeline-item">
+        <img src="images/funny.JPG" alt="Funny Moment" />
+        <h3>Candid Moments</h3>
+        <p>We couldn’t stop laughing. Absolutely unforgettable!</p>
+      </div>
+      <!-- Add more timeline-items as needed -->
+    </div>
+  </section>
+
+  <!-- ========== SPOTIFY PLAYLIST SECTION ========== -->
+  <section id="playlist" class="playlist container">
+    <h2>The Soundtrack of Us</h2>
+    <p>Each of these songs has a special meaning for us. Enjoy!</p>
+    <!-- Replace with your own Spotify Embed URL -->
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/25ldwD9EMw3qXwh2COTkYz?utm_source=generator&theme=0" width="100%"
+      height="352" frameBorder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </section>
+
+  <!-- ========== LOVE LETTER SECTION ========== -->
+  <section class="love-letter">
+    <div class="container">
+      <h2>A Heartfelt Letter</h2>
+      <!-- Typewriter effect for preview -->
+      <div class="letter-content">
+        My dearest Ritika, <br><br>
+        From the moment our paths crossed...
+      </div>
+      <!-- "Read More" button to open modal -->
+      <button class="read-more" onclick="openLetterModal()">Read More</button>
+    </div>
+  </section>
+
+  <!-- Modal for Full Love Letter -->
+  <div id="letterModal" class="modal" onclick="closeLetterModal()">
+    <div class="modal-content letter-modal-content" onclick="event.stopPropagation()">
+      <span class="close" onclick="closeLetterModal()">&times;</span>
+      <h2>A Heartfelt Letter</h2>
+      <p>
+        My dearest Ritika, <br><br>
+        From the moment our paths crossed, you brought light and warmth into my life. Your smile feels like home, and
+        your presence turns ordinary moments into cherished memories. <br><br>
+
+        You’ve shown me that love is about more than words—it's about standing together, through quiet nights and stormy
+        days. Your kindness, strength, and unwavering spirit inspire me every day. <br><br>
+
+        I dream of a future where we share not just our joys, but our challenges too, growing stronger with each step.
+        You are my safe place, my guiding star, and the reason my heart feels full. <br><br>
+
+        I promise to walk this journey of life with you, hand in hand, through all its twists and turns. Thank you for
+        being my everything. <br><br>
+
+        Forever yours,<br>
+        Rohit
+      </p>
+    </div>
+  </div>
+
+  <!-- ========== PHOTO GALLERY SECTION ========== -->
+  <section class="gallery container">
+    <h2>Our Favorite Moments</h2>
+    <div class="gallery-grid">
+      <!-- Example photo gallery item -->
+      <div class="gallery-item">
+        <img src="images/fav1.JPG" alt="Photo 1" onclick="openModal('images/fav1.JPG')">
+        <div class="gallery-caption">Caption for Photo 1</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/fav2.jpg" alt="Photo 2" onclick="openModal('images/fav2.jpg')">
+        <div class="gallery-caption">Caption for Photo 2</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/fav3.jpg" alt="Photo 3" onclick="openModal('images/fav3.jpg')">
+        <div class="gallery-caption">Caption for Photo 3</div>
+      </div>
+      <!-- Add more items as needed -->
+    </div>
+  </section>
+
+  <!-- ========== QUIZ SECTION ========== -->
+  <section id="quiz" class="quiz">
+    <div class="container">
+      <h2>How Well Do You Know Me?</h2>
+      <div id="question-container" class="question-container">
+        <!-- Questions will dynamically load here -->
+      </div>
+      <button id="next-btn" class="submit-btn" onclick="nextQuestion()">Next</button>
+      <div id="quizResult" style="margin-top: 20px; font-size: 1.2rem; display: none;"></div>
+      <button id="restart-btn" class="submit-btn" style="display: none;" onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+  </section>
+  
+
+  <!-- ========== WISHES FROM LOVED ONES ========== -->
+  <section class="wishes">
+    <div class="container">
+      <h2>Our Story</h2>
+      <div class="wishes-container">
+        <!-- Example wish item -->
+        <div class="wish-item">
+          <img src="images/1.png" alt="Friend" onclick="openModal('images/1.png')">
+        </div>
+        <div class="wish-item">
+          <img src="images/2.png" alt="Friend" onclick="openModal('images/2.png')">
+        </div>
+        <div class="wish-item">
+          <img src="images/3.png" alt="Friend" onclick="openModal('images/3.png')">
+        </div>
+        <div class="wish-item">
+          <img src="images/4.png" alt="Friend" onclick="openModal('images/4.png')">
+        </div>
+        <div class="wish-item">
+          <img src="images/5.png" alt="Friend" onclick="openModal('images/5.png')">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STAR MAP SECTION ========== -->
+  <section class="star-map">
+    <div class="container">
+      <h2>Our Starry Moments</h2>
+      <p>Here are the constellations as they appeared on the most special days of our journey together.</p>
+      <div class="star-map-grid">
+        <!-- First Date Star Map -->
+        <div class="star-map-item">
+          <img src="images/star_map.png" alt="First Date Star Map" onclick="openModal('images/star_map.png')" />
+          <h3>Birthday</h3>
+          <p>On this magical day, the stars aligned to mark the beginning of our beautiful journey.</p>
+        </div>
+        <!-- Anniversary Star Map -->
+        <div class="star-map-item">
+          <img src="images/first_met.png" alt="Anniversary Star Map" onclick="openModal('images/first_met.png')" />
+          <h3>First Met</h3>
+          <p>A night to remember, filled with love and constellations shining bright just for us.</p>
+        </div>
+        <!-- Special Moment Star Map -->
+        <div class="star-map-item">
+          <img src="images/first_anniversary.png" alt="Special Moment Star Map"
+            onclick="openModal('images/first_anniversary.png')" />
+          <h3>First Anniversary</h3>
+          <p>The universe witnessed another unforgettable moment in our journey together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage" />
+  </div>
+
+  <!-- ========== LOVE MESSAGE SECTION ========== -->
+  <section class="love-message">
+    <div class="container">
+      <h2>Special Love Messages</h2>
+      <div id="message-box" class="message-box" onclick="generateLoveMessage()">
+        Click me for a special message!
+      </div>
+      <p id="hint" class="hint">Click again for another message!</p>
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>You make every moment special, and today, it’s all about you.</p>
+    <p>For endless hugs, call me tonight!</p>
+  </footer>
+</body>
+
+<script>
+  const allQuestions = [
+    { question: "What is my favorite movie genre?", answer: "Romance", options: ["Romance", "Horror", "Comedy"] },
+    { question: "Which book inspired me the most?", answer: "Power of Subconscious Mind", options: ["Atomic Habits", "Power of Subconscious Mind", "Think and Grow Rich"] },
+    { question: "What’s my favorite type of weather?", answer: "Winter", options: ["Summer", "Winter", "Rainy"] },
+    { question: "What food can I eat every day?", answer: "Dosa", options: ["Pizza", "Burger", "Dosa"] },
+    { question: "What’s my most cherished childhood memory?", answer: "Playing with my toy car", options: ["Playing with my toy car", "Going to the park", "Reading comics"] },
+    { question: "Which city feels like home to me?", answer: "Deoghar", options: ["Mumbai", "Deoghar", "Delhi"] },
+    { question: "What is my dream vacation spot?", answer: "Switzerland", options: ["Maldives", "Switzerland", "Paris"] },
+    { question: "Which language do I wish to learn?", answer: "Sanskrit", options: ["Spanish", "French", "Sanskrit"] },
+    { question: "What is my go-to comfort food?", answer: "Pizza", options: ["Pasta", "Pizza", "Noodles"] },
+    { question: "Who is my favorite historical figure?", answer: "Shakespeare", options: ["Newton", "Einstein", "Shakespeare"] },
+    { question: "What’s my preferred way to exercise?", answer: "Home workout", options: ["Gym", "Home workout", "Yoga"] },
+    { question: "What’s my favorite song to dance to?", answer: "Badtameez Dil", options: ["Badtameez Dil", "Senorita", "Lungi Dance"] },
+    { question: "If I could live anywhere, where would it be?", answer: "In your room", options: ["Paris", "In your room", "Switzerland"] },
+    { question: "Which animal do I feel a special connection with?", answer: "Horse", options: ["Dog", "Horse", "Cat"] },
+    { question: "What’s my favorite drink on a cold day?", answer: "Hot coffee", options: ["Tea", "Hot chocolate", "Hot coffee"] },
+    { question: "Who do I consider my greatest role model?", answer: "Elon Musk", options: ["Steve Jobs", "Elon Musk", "Nikola Tesla"] },
+    { question: "What kind of art moves me the most?", answer: "Paintings", options: ["Sculptures", "Music", "Paintings"] },
+    { question: "What’s my favorite type of cuisine?", answer: "Indian", options: ["Italian", "Indian", "Mexican"] },
+    { question: "What’s my biggest pet peeve?", answer: "Littering", options: ["Littering", "Loud chewing", "Being late"] },
+    { question: "What’s my favorite way to spend weekends?", answer: "Spontaneous trips", options: ["Reading", "Spontaneous trips", "Watching movies"] },
+    { question: "What kind of movies do I dislike the most?", answer: "Predictable", options: ["Predictable", "Horror", "Documentaries"] },
+    { question: "What’s my favorite childhood TV show?", answer: "Doraemon", options: ["Tom & Jerry", "Doraemon", "Pokemon"] },
+    { question: "What’s my favorite sport to watch?", answer: "Cricket", options: ["Football", "Cricket", "Tennis"] },
+    { question: "Who’s my favorite actor?", answer: "Tom Cruise", options: ["Tom Hanks", "Tom Cruise", "Leonardo DiCaprio"] },
+    { question: "What’s my favorite holiday destination?", answer: "Himachal", options: ["Kerala", "Himachal", "Goa"] },
+    { question: "What’s my favorite board game?", answer: "Monopoly", options: ["Chess", "Monopoly", "Scrabble"] },
+    { question: "What’s my favorite memory with my best friend?", answer: "Walking after dinner", options: ["Playing games", "Walking after dinner", "Studying together"] },
+    { question: "Who’s my favorite superhero?", answer: "Thor", options: ["Iron Man", "Thor", "Spider-Man"] },
+    { question: "What’s my biggest fear?", answer: "Tight places", options: ["Heights", "Tight places", "Darkness"] },
+    { question: "What’s my favorite outdoor activity?", answer: "Badminton/Cricket", options: ["Football", "Badminton/Cricket", "Cycling"] },
+    { question: "What’s my favorite car or vehicle?", answer: "Car", options: ["Bike", "Car", "Scooter"] },
+    { question: "What’s my favorite way to relax after work?", answer: "Talk to you", options: ["Watch TV", "Talk to you", "Read a book"] },
+    { question: "What’s my go-to karaoke song?", answer: "Tum Se Hi", options: ["Tum Se Hi", "Channa Mereya", "Agar Tum Saath Ho"] },
+    { question: "What’s my favorite holiday of the year?", answer: "Diwali", options: ["Christmas", "Diwali", "Holi"] },
+    { question: "Which season do I like the most?", answer: "Winter", options: ["Summer", "Winter", "Monsoon"] },
+    { question: "What’s my favorite thing to collect?", answer: "Intriguing articles", options: ["Stamps", "Intriguing articles", "Books"] },
+    { question: "Who is my favorite musician?", answer: "Enrique Iglesias", options: ["Arijit Singh", "Ed Sheeran", "Enrique Iglesias"] },
+    { question: "What is my favorite type of flower?", answer: "Lavender rose", options: ["Sunflower", "Rose", "Lavender rose"] },
+    { question: "Which hobby do I enjoy the most?", answer: "Sketching", options: ["Photography", "Sketching", "Cooking"] },
+    { question: "What’s my favorite thing about my job?", answer: "I can be creative", options: ["Work environment", "I can be creative", "Team"] },
+    { question: "Who was my childhood hero?", answer: "Papa", options: ["Superman", "Papa", "Teacher"] },
+    { question: "What’s my favorite guilty pleasure TV show?", answer: "Friends", options: ["Friends", "The Office", "Breaking Bad"] },
+    { question: "What’s my favorite quote or mantra?", answer: "Follow your heart when in doubt", options: ["Never give up", "Follow your heart when in doubt", "Stay positive"] },
+    { question: "What’s my favorite restaurant?", answer: "Any with you", options: ["McDonald's", "Pizza Hut", "Any with you"] },
+    { question: "Which subject did I enjoy most in school?", answer: "Science", options: ["Math", "History", "Science"] },
+    { question: "What’s my favorite kind of dessert?", answer: "Choco lava cake", options: ["Ice cream", "Choco lava cake", "Brownie"] },
+    { question: "What is my most treasured possession?", answer: "You", options: ["Watch", "You", "Book"] },
+    { question: "What is my favorite beach activity?", answer: "Making sandcastles", options: ["Swimming", "Making sandcastles", "Sunbathing"] },
+    { question: "What’s my favorite fictional character?", answer: "Doraemon", options: ["Harry Potter", "Doraemon", "Sherlock Holmes"] },
+    { question: "What’s my favorite piece of advice I’ve ever received?", answer: "Keep giving", options: ["Stay strong", "Keep giving", "Be kind"] }
+  ];
+
+  let selectedQuestions = [];
+  let currentQuestionIndex = 0;
+  let score = 0;
+
+  function getRandomQuestions() {
+    const shuffled = allQuestions.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 5); // Select 5 random questions
+  }
+
+  function loadQuestion() {
+    const questionContainer = document.getElementById("question-container");
+    const questionData = selectedQuestions[currentQuestionIndex];
+    questionContainer.innerHTML = `
+      <p>${currentQuestionIndex + 1}. ${questionData.question}</p>
+      ${questionData.options
+        .sort(() => 0.5 - Math.random()) // Shuffle options
+        .map(
+          (option) =>
+            `<label>
+              <input type="radio" name="question" value="${option}" />
+              ${option}
+            </label><br>`
+        )
+        .join("")}
+    `;
+  }
+
+  function nextQuestion() {
+    const selectedOption = document.querySelector('input[name="question"]:checked');
+    if (!selectedOption) {
+      alert("Please select an answer before proceeding!");
+      return;
+    }
+
+    if (selectedOption.value === selectedQuestions[currentQuestionIndex].answer) {
+      score++;
+    }
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < selectedQuestions.length) {
+      loadQuestion();
+    } else {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    document.getElementById("question-container").style.display = "none";
+    document.getElementById("next-btn").style.display = "none";
+
+    const resultDiv = document.getElementById("quizResult");
+    resultDiv.style.display = "block";
+    resultDiv.textContent = `You got ${score} out of ${selectedQuestions.length} correct! ${
+      score === selectedQuestions.length
+        ? "You know me so well, my love!"
+        : "Not bad, but let’s keep making memories!"
+    }`;
+
+    document.getElementById("restart-btn").style.display = "block";
+  }
+
+  function restartQuiz() {
+    selectedQuestions = getRandomQuestions();
+    currentQuestionIndex = 0;
+    score = 0;
+    document.getElementById("question-container").style.display = "block";
+    document.getElementById("next-btn").style.display = "inline-block";
+    document.getElementById("quizResult").style.display = "none";
+    document.getElementById("restart-btn").style.display = "none";
+    loadQuestion();
+  }
+
+  // Initialize the quiz
+  selectedQuestions = getRandomQuestions();
+  loadQuestion();
+
+  function openModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = imageSrc; // Set the image source
+    modal.style.display = 'flex'; // Show the modal
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none'; // Hide the modal
+  }
+
+  function openLetterModal() {
+    const modal = document.getElementById('letterModal');
+    modal.style.display = 'flex'; // Show the modal
+  }
+
+  function closeLetterModal() {
+    const modal = document.getElementById('letterModal');
+    modal.style.display = 'none'; // Hide the modal
+  }
+
+  const loveMessages = [
+  "You light up my world like nobody else.",
+  "Every moment with you feels like a dream come true.",
+  "Your smile is my favorite sight in the entire world.",
+  "I am so lucky to have you in my life.",
+  "With you, every day is Valentine’s Day.",
+  "You are my sunshine on a cloudy day.",
+  "My heart beats faster every time I see you.",
+  "Life feels perfect with you by my side.",
+  "You are the reason I believe in true love.",
+  "Forever isn’t long enough with you.",
+  "I fall in love with you more every day.",
+  "Your love is the best gift I’ve ever received.",
+  "You are my greatest adventure.",
+  "I could spend an eternity in your arms.",
+  "Your laughter is music to my ears.",
+  "You are the missing piece of my puzzle.",
+  "Home is wherever I’m with you.",
+  "You have my heart, now and always.",
+  "Every love story is beautiful, but ours is my favorite.",
+  "You are my happy place.",
+  "You make my world brighter and my heart lighter.",
+  "I’m grateful for every moment we share.",
+  "Your love gives my life meaning.",
+  "You’re my first thought in the morning and my last at night.",
+  "Being with you feels like coming home.",
+  "You have the most beautiful soul I’ve ever known.",
+  "I can’t imagine my life without you.",
+  "Your love is my guiding light.",
+  "I adore everything about you.",
+  "You make even the ordinary feel extraordinary.",
+  "You are my heart’s greatest treasure.",
+  "Your touch sends shivers down my spine.",
+  "I’m so thankful for your love and kindness.",
+  "You are my everything and more.",
+  "You’re the best thing that’s ever happened to me.",
+  "I love you more than words can express.",
+  "You complete me in every way possible.",
+  "Your love is my strength and my weakness.",
+  "You make my heart skip a beat.",
+  "You are the love of my life and my best friend.",
+  "Your presence is my favorite present.",
+  "You’ve turned my world into a paradise.",
+  "You make my life a beautiful story.",
+  "I love you to the moon and back.",
+  "You’re the reason I wake up with a smile.",
+  "Your love is the anchor of my soul.",
+  "I’m yours, forever and always.",
+  "You are the sweetest part of my life.",
+  "With you, I feel invincible.",
+  "You are my dream come true.",
+  "Every moment with you is a blessing.",
+  "You are my heart’s melody.",
+  "You’re my perfect match.",
+  "Your love makes my heart sing.",
+  "You are the most beautiful chapter of my life.",
+  "With you, I’ve found my forever.",
+  "You are the joy in my life.",
+  "You have my heart and soul.",
+  "You’re my forever and always.",
+  "You are the reason behind my smile.",
+  "Loving you is the best decision I’ve ever made.",
+  "You’re my favorite hello and hardest goodbye.",
+  "Your love is my safe haven.",
+  "You are the spark that lights up my life.",
+  "You make my heart race with happiness.",
+  "You are my biggest blessing.",
+  "Every day with you is a new adventure.",
+  "You’re my once-in-a-lifetime kind of love.",
+  "Your love feels like magic.",
+  "You are the reason I believe in miracles.",
+  "You’re the love I never saw coming.",
+  "Your love is my greatest treasure.",
+  "You are my heart’s true desire.",
+  "I feel so loved and cherished by you.",
+  "You’re my favorite daydream.",
+  "You make life worth living.",
+  "Your love is my greatest joy.",
+  "I love you more with every breath I take.",
+  "You are my sweetest escape.",
+  "With you, life is more beautiful.",
+  "You’ve captured my heart forever.",
+  "You are the reason my heart beats.",
+  "I cherish every moment with you.",
+  "You make my life complete.",
+  "Your love is my guiding star.",
+  "I’m lost in your love and I never want to be found.",
+  "You are my world, my everything.",
+  "You’re the best part of my every day.",
+  "I love you endlessly and unconditionally.",
+  "Your love is my safe harbor.",
+  "You’re my forever home.",
+  "You are my shining star.",
+  "Your love is my greatest gift.",
+  "You’re my heart’s deepest wish.",
+  "I feel so lucky to be loved by you.",
+  "You are my heart’s delight.",
+  "Your love is my greatest comfort.",
+  "I’m better because of your love.",
+  "You are my heart’s treasure.",
+  "You are my heart’s truest desire.",
+  "With you, every moment is magical.",
+  "Your love makes me feel whole.",
+  "I’m grateful for your love every day.",
+  "You’re my favorite love story.",
+  "You are my heart’s greatest reward.",
+  "You’ve made my life a fairytale.",
+  "Your love is my greatest adventure.",
+  "You are my perfect love.",
+  "Your love is the light of my life.",
+  "You’re the love that I’ve always dreamed of.",
+  "You are the reason I smile every day.",
+  "Your love has made me a better person.",
+  "You are my heart’s forever home.",
+  "You’re my greatest gift and my greatest love.",
+  "You make my heart sing with joy.",
+  "Your love is the rhythm of my life.",
+  "You’ve brought endless joy into my life.",
+  "You are my sweet forever.",
+  "Your love has transformed my world.",
+  "You’re my favorite kind of happiness.",
+  "You are my heart’s deepest joy.",
+  "You’ve turned my dreams into reality.",
+  "Your love is the most beautiful thing I’ve ever known.",
+  "You are my life’s greatest blessing.",
+  "Your love is the essence of my life.",
+  "You’ve made every moment of my life better.",
+  "You are my heart’s everlasting song.",
+  "You’re my sweetest secret.",
+  "You are the love that I’ve always wished for.",
+  "Your love is my greatest strength.",
+  "You are the reason my soul feels complete.",
+  "You’re my everything and more.",
+  "You are my life’s greatest treasure."
+];
+
+// Continue expanding if you'd like more messages!
+
+
+  function generateLoveMessage() {
+    const randomIndex = Math.floor(Math.random() * loveMessages.length);
+    const messageBox = document.getElementById('message-box');
+    const hint = document.getElementById('hint');
+    
+    // Update the message
+    messageBox.innerHTML = loveMessages[randomIndex];
+    
+    // Show the hint
+    hint.style.opacity = 1;
+
+    // Add a brief animation to the message box
+    messageBox.style.transform = 'scale(1.1)';
+    setTimeout(() => {
+      messageBox.style.transform = 'scale(1)';
+    }, 200);
+  }
+</script>
+
+
+</html>
